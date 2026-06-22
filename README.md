@@ -30,7 +30,7 @@ Requires the Statistics and Machine Learning Toolbox and Image Processing Toolbo
 ### As a standalone Windows installer
 
 A precompiled installer (~2.8 MB) that runs without MATLAB is available on 
-request — contact [your email]. The installer downloads the MATLAB Runtime 
+request — contact zirouxie@umich.edu. The installer downloads the MATLAB Runtime 
 (~2 GB) on first install.
 
 ## Usage
