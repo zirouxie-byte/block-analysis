@@ -1486,13 +1486,23 @@ function app = BlockAnalysisApp
         % ---- Plot card ----
         plotCard = makeCard(layout, CLR);
         plotCard.Layout.Row = 5;
-        pg = uigridlayout(plotCard, [1,1]);
+        pg = uigridlayout(plotCard, [2,1]);
+        pg.RowHeight = {'1x', 'fit'};
         pg.Padding = [16 16 16 16];
+        pg.RowSpacing = 6;
         H.axes = uiaxes(pg);
-        H.axes.XLabel.String = 'Load step (image number in series)';
+        H.axes.Layout.Row = 1;
+        H.axes.XLabel.String = 'Image index';
         H.axes.YLabel.String = 'Distance [px]';
         H.axes.Title.String  = 'DIC-measured distances over the load series';
         H.axes.FontSize = 11;
+        plotNote = uilabel(pg, ...
+            'Text', ['Note: "Image index" = the number of each frame in your ' ...
+                     'uploaded series (1 = first frame after loading begins, ' ...
+                     '2 = second frame, etc.). Higher index = later in the experiment.'], ...
+            'WordWrap', 'on', 'FontSize', 11, 'FontColor', CLR.text2, ...
+            'FontAngle', 'italic');
+        plotNote.Layout.Row = 2;
 
         statusCard = makeStatusFooter(layout, CLR);
         statusCard.Layout.Row = 6;
